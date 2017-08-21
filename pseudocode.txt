@@ -1,3 +1,6 @@
+Nama: Saptanto Sindu K.U
+Program Objectives: Polling for next update in polling.html
+
 SET object "obj" dengan prosedur "createConnection"
 SET prosedur "createConnection"
 	SET object "config" dengan konfigurasi Google Firebase

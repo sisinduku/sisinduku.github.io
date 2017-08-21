@@ -1,3 +1,7 @@
+/* Nama: Saptanto Sindu K.U
+ * Program Objectives: Polling for next update in polling.html
+*/
+
 obj.createConnection();
 
 function savePolling(data) {

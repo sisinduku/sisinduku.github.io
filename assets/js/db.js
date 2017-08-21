@@ -15,12 +15,10 @@ function savePolling(data) {
   });
 }
 
-function 
-
 $(document).ready(function($) {
 	$("#polling").submit(function() {	
     var data = [];
-    
+
 		var email = $("#email-field").val();
 		var poll = $('input[name="polling-field"]:checked').val();
 

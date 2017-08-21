@@ -1,4 +1,4 @@
-init();
+obj.createConnection();
 
 function savePolling(data) {
 	firebase.database().ref('polling/').push().set({

@@ -31,7 +31,10 @@ $(document).ready(function($) {
   $("#readdata").click(function(event) {
     firebase.database().ref('polling/').once('value', function(snapshot){    
       for (x in snapshot.val()) {        
-        console.log(x);
+        firebase.database().ref('polling/' + x + '/').once('value', function(xsnapshot){ 
+          var data = xsnapshot.val();
+          console.log(data.choice);
+        }); 
       }
     });  
     

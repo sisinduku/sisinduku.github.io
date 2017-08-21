@@ -15,15 +15,6 @@ function savePolling(data) {
   });
 }
 
-function readPolling() {
-  firebase.database().ref('polling/').on('value', function(snapshot){    
-    var data = snapshot.val();
-    for (var i = data.length - 1; i >= 0; i--) {
-      $('#result').append("<li>" + data[i].choice + "</li>")
-    }
-  });  
-}
-
 $(document).ready(function($) {
 	$("#polling").submit(function() {	
     var data = [];
@@ -38,7 +29,12 @@ $(document).ready(function($) {
 	});
 
   $("#readdata").click(function(event) {
-    readPolling();    
+    firebase.database().ref('polling/').on('value', function(snapshot){    
+      var data = snapshot.val();
+      for (var i = data.length - 1; i >= 0; i--) {
+        $('#result').append("<li>" + data[i].choice + "</li>")
+      }
+    });  
     
     return false;
   });

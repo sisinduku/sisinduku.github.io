@@ -4,7 +4,7 @@ function savePolling(email, poll) {
 	firebase.database().ref('polling/').set({
     'email': email,
     'choice': poll    
-  }, function() {
+  }, function(err) {
   	if(err){
         alert("Your polling was not entered, please contact admin");
   	} else {

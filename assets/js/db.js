@@ -15,9 +15,11 @@ function savePolling(email, poll) {
   });
 }
 
-$("#polling").submit(function(event) {	
-	var email = $("#email-field").val();
-	var poll = $("#polling-field").val();
+$(document).ready(function($) {
+	$("#polling-sumbit").click(function() {	
+		var email = $("#email-field").val();
+		var poll = $("#polling-field").val();
 
-	savePolling(email, poll);
+		savePolling(email, poll);
+	});
 });

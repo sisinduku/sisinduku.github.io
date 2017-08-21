@@ -1,0 +1,32 @@
+SET object "obj" dengan prosedur "createConnection"
+SET prosedur "createConnection"
+	SET object "config" dengan konfigurasi Google Firebase
+	CALL "firebase.initializeApp" dengan parameter "config"
+
+CALL "obj.createConnection"
+SET prosedur "savePolling" dengan parameter "data"
+	SIMPAN "data" pada database firebase
+	IF terdapat error
+		CALL "alert" dengan parameter "Your polling was not entered, please contact admin "
+	ELSE
+		CALL "alert" dengan parameter "Your polliong is submitted. Thank you for your participation"
+		SET field "email" dengan ""
+	ENDIF
+
+CALL "polling" on "submit"
+	SET "data" dengan array kosong
+	SET "email" dengan field email
+	SET "poll" dengan nilai polling terpilih
+	SET "data" dengan "email" dan "poll"
+	CALL "savePolling" dengan parameter "data"
+	RETURN false
+
+CALL "#readdata" on "click"
+	READ database pada "polling/"
+	FOR setiap elemen "x" pada database "polling/"
+		READ dataabase pada "polling/x/"
+		SET "data" dengan nilai "polling/x/"
+		SET "#result" menjadi kosong
+		SET "#result" dengan list "data.choice"
+	ENDFOR
+	RETURN false

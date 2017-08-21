@@ -9,8 +9,7 @@ function savePolling(data) {
         alert("Your polling was not entered, please contact admin");
   	} else {
     	alert ("Your polliong is submitted. Thank you for your participation");        
-        $('#email-field').val('');
-        $('#polling-field').val('');
+        $('#email-field').val('');        
   	}
   });
 }

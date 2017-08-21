@@ -7,4 +7,5 @@ var config = {
   storageBucket: "github-pages-b413e.appspot.com",
   messagingSenderId: "121658623412"
 };
-firebase.initializeApp(config);
+var app = firebase.initializeApp(config);
+console.log(app.name);

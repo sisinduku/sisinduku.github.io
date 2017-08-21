@@ -15,6 +15,12 @@ function savePolling(data) {
   });
 }
 
+function readPolling() {
+  firebase.database().ref('polling/').on('value', function(snapshot){
+    console.log(snapshot.val());
+  });
+}
+
 $(document).ready(function($) {
 	$("#polling").submit(function() {	
     var data = [];
@@ -27,5 +33,11 @@ $(document).ready(function($) {
 
 		return false;
 	});
+
+  $("#readdata").click(function(event) {
+    readPolling();
+
+    return false;
+  });
 });
 

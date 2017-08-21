@@ -16,9 +16,11 @@ function savePolling(data) {
 }
 
 function readPolling() {
-  return firebase.database().ref('polling/').on('value', function(snapshot){    
+  var data = firebase.database().ref('polling/').on('value', function(snapshot){    
     return snapshot.val();
   });
+
+  return data;
 }
 
 $(document).ready(function($) {

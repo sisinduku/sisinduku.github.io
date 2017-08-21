@@ -17,10 +17,11 @@ function savePolling(data) {
 
 function readPolling() {
   var data = firebase.database().ref('polling/').on('value', function(snapshot){    
-    return snapshot.val();
-  });
-
-  return data;
+    var data = snapshot.val();
+    for (var i = data.length - 1; i >= 0; i--) {
+      $('#result').append("<li>" + data[i].choice + "</li>")
+    }
+  });  
 }
 
 $(document).ready(function($) {
@@ -37,11 +38,8 @@ $(document).ready(function($) {
 	});
 
   $("#readdata").click(function(event) {
-    var pollingResult = readPolling();
-    console.log(pollingResult);
-    for (var i = pollingResult.length - 1; i >= 0; i--) {
-      $('#result').append("<li>" + pollingResult[i].choice + "</li>")
-    }
+    readPolling();    
+    
     return false;
   });
 });

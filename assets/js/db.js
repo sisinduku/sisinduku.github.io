@@ -30,8 +30,10 @@ $(document).ready(function($) {
 
   $("#readdata").click(function(event) {
     firebase.database().ref('polling/').on('value', function(snapshot){    
-      var data = snapshot.val();
-      console.log(data['choice']);
+      for (x in snapshot.val()) {
+        var choice = x['choice'];
+        console.log(choice);
+      }
     });  
     
     return false;

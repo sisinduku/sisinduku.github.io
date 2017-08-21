@@ -90,6 +90,41 @@ img {
 	border: 0;
 }
 
+form > div {
+	margin-top: 15px;
+	position: relative;
+}
+
+form > div:first-child {
+	margin-top: 5px;
+}
+
+input[type="text"] {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	background: #f0f0f0;
+	border: none;
+	line-height: 1.5em;
+	color: #999999;
+	padding: 5px 5px;
+	width: 240px;
+}
+
+input[type="submit"] {
+    font-size: 13px;
+    line-height: 1.5em;
+    height: 24px;
+    color: #ffffff;
+    background: #999999;
+    padding: 0px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #139083;
+}
+
 header .wrapper {
 	overflow: hidden;	
 }
@@ -226,6 +261,10 @@ header .wrapper {
 
 .one-third {
 	width: 260px;
+}
+
+.one-half {
+	width: 420px;
 }
 
 .last {

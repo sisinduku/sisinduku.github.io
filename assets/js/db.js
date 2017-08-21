@@ -21,5 +21,7 @@ $(document).ready(function($) {
 		var poll = $('input[name="polling-field"]:checked').val();
 
 		savePolling(email, poll);
+
+		return false;
 	});
 });

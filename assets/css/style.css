@@ -99,7 +99,7 @@ form > div:first-child {
 	margin-top: 5px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 13px;
 	background: #f0f0f0;

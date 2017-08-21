@@ -16,7 +16,7 @@ function savePolling(email, poll) {
 }
 
 $(document).ready(function($) {
-	$("#polling-sumbit").click(function() {	
+	$("#polling").submit(function() {	
 		var email = $("#email-field").val();
 		var poll = $('input[name="polling-field"]:checked').val();
 

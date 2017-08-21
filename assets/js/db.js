@@ -1,1 +1,1 @@
-getConnection();
+init();

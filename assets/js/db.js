@@ -1,9 +1,9 @@
 init();
 
-function savePolling(email, poll) {
-	firebase.database().ref('polling/').set({
-    'email': email,
-    'choice': poll    
+function savePolling(data) {
+	firebase.database().ref('polling/').push().set({
+    'email': data[0],
+    'choice': data[1]    
   }, function(err) {
   	if(err){
         alert("Your polling was not entered, please contact admin");
@@ -15,13 +15,19 @@ function savePolling(email, poll) {
   });
 }
 
+function 
+
 $(document).ready(function($) {
 	$("#polling").submit(function() {	
+    var data = [];
+    
 		var email = $("#email-field").val();
 		var poll = $('input[name="polling-field"]:checked').val();
 
-		savePolling(email, poll);
+    data.push(email, poll);
+		savePolling(data);
 
 		return false;
 	});
 });
+

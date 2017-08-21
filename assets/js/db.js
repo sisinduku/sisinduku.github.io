@@ -16,8 +16,7 @@ function savePolling(data) {
 }
 
 function readPolling() {
-  return firebase.database().ref('polling/').on('value', function(snapshot){
-    console.log(snapshot.val());
+  return firebase.database().ref('polling/').on('value', function(snapshot){    
     return snapshot.val();
   });
 }
@@ -37,6 +36,7 @@ $(document).ready(function($) {
 
   $("#readdata").click(function(event) {
     var pollingResult = readPolling();
+    console.log(pollingResult);
     for (var i = pollingResult.length - 1; i >= 0; i--) {
       $('#result').append("<li>" + pollingResult[i].choice + "</li>")
     }

@@ -1,4 +1,4 @@
-function getConnection {
+function getConnection() {
   // Set the configuration for your app
   
   var config = {

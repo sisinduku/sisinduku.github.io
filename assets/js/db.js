@@ -29,9 +29,9 @@ $(document).ready(function($) {
 	});
 
   $("#readdata").click(function(event) {
-    firebase.database().ref('polling/').on('value', function(snapshot){    
+    firebase.database().ref('polling/').once('value', function(snapshot){    
       for (x in snapshot.val()) {
-        var choice = x['choice'];
+        var choice = x.choice;
         console.log(choice);
       }
     });  

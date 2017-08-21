@@ -16,7 +16,7 @@ function savePolling(data) {
 }
 
 function readPolling() {
-  firebase.database().ref('polling/').on('value', function(snapshot){
+  return firebase.database().ref('polling/').on('value', function(snapshot){
     console.log(snapshot.val());
     return snapshot.val();
   });

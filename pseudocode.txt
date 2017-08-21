@@ -26,10 +26,10 @@ CALL "polling" on "submit"
 
 CALL "#readdata" on "click"
 	READ database pada "polling/"
+	SET "#result" menjadi kosong
 	FOR setiap elemen "x" pada database "polling/"
 		READ dataabase pada "polling/x/"
-		SET "data" dengan nilai "polling/x/"
-		SET "#result" menjadi kosong
+		SET "data" dengan nilai "polling/x/"		
 		SET "#result" dengan list "data.choice"
 	ENDFOR
 	RETURN false

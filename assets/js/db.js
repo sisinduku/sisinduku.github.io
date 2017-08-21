@@ -33,10 +33,10 @@ $(document).ready(function($) {
 
   $("#readdata").click(function(event) {
     firebase.database().ref('polling/').once('value', function(snapshot){    
+      $('#result').remove();
       for (x in snapshot.val()) {        
         firebase.database().ref('polling/' + x + '/').once('value', function(xsnapshot){ 
-          var data = xsnapshot.val();
-          $('#result').remove();
+          var data = xsnapshot.val();          
           $('#result').append('<li>' + data.choice + '</li>');
         }); 
       }

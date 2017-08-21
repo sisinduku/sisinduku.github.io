@@ -31,9 +31,7 @@ $(document).ready(function($) {
   $("#readdata").click(function(event) {
     firebase.database().ref('polling/').on('value', function(snapshot){    
       var data = snapshot.val();
-      for (var i = data.length - 1; i >= 0; i--) {
-        $('#result').append("<li>" + data[i].choice + "</li>")
-      }
+      console.log(data['choice']);
     });  
     
     return false;

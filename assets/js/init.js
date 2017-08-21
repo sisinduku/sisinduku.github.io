@@ -9,6 +9,6 @@ var obj = {
       storageBucket: "github-pages-b413e.appspot.com",
       messagingSenderId: "121658623412"
     };
-    var app = firebase.initializeApp(config);    
+    firebase.initializeApp(config);    
   }
 };

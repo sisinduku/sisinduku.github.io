@@ -33,6 +33,7 @@ $(document).ready(function($) {
       for (x in snapshot.val()) {        
         firebase.database().ref('polling/' + x + '/').once('value', function(xsnapshot){ 
           var data = xsnapshot.val();
+          $('#result').remove();
           $('#result').append('<li>' + data.choice + '</li>');
         }); 
       }

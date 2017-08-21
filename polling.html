@@ -39,13 +39,13 @@
 							<h4>Polling Form</h4>
 							<form id="polling">
 								<div>
-						        	<label for="email-field".>Your Email:</label>
+						        	<label for="email-field">Your Email:</label>
 					        		<div class="textinput-form">
 					            		<input id="email-field" name="email-field" type="email" placeholder="Enter Your Email Here" tabindex="1">
 						          	</div>
 						        </div>
 						        <div>
-						        	<label for="email-field".>Your Polling:</label>
+						        	<label for="email-field">Your Polling:</label>
 					        		<div class="textinput-form">
 				            			<input type="radio" name="polling-field" value="coding"> Coding Tutorial<br>
 										<input type="radio" name="polling-field" value="gaming"> Gaming Trivia<br>
@@ -57,10 +57,14 @@
 						        </div>
 							</form>
 						</div>	
-						<div class="column one-third">
-							<div>
-					        	<input id="readdata" type="submit" name="submit" value="Submit Polling">
+						<div class="column one-third last">
+							<h4>Polling Result</h4>
+							<div style="margin-top: 15px"> 
+					        	<input id="readdata" type="submit" name="submit" value="Show Polling">
 					        </div>
+					        <ul id='result'>
+					        	
+					        </ul>
 						</div>					
 					</div>
 				</article>

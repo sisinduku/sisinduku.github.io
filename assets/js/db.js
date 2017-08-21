@@ -8,7 +8,7 @@ function savePolling(data) {
   	if(err){
         alert("Your polling was not entered, please contact admin");
   	} else {
-    	alert ("Your activity is submitted");        
+    	alert ("Your polliong is submitted. Thank you for your participation");        
         $('#email-field').val('');
         $('#polling-field').val('');
   	}
@@ -18,6 +18,7 @@ function savePolling(data) {
 function readPolling() {
   firebase.database().ref('polling/').on('value', function(snapshot){
     console.log(snapshot.val());
+    return snapshot.val();
   });
 }
 
@@ -35,8 +36,10 @@ $(document).ready(function($) {
 	});
 
   $("#readdata").click(function(event) {
-    readPolling();
-
+    var pollingResult = readPolling();
+    for (var i = pollingResult.length - 1; i >= 0; i--) {
+      $('#result').append("<li>" + pollingResult[i].choice + "</li>")
+    }
     return false;
   });
 });
